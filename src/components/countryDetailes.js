@@ -59,7 +59,10 @@ const CountryDetailes = () => {
 
   return (
     <Container className={classes.container}>
-      <Link className={classes.a} to="/">
+      <Link
+        className={classes.a}
+        to="/rest-countries-api-with-react-and-matrial-ui"
+      >
         <Button variant="outlined" startIcon={<ArrowBackIcon />}>
           Back
         </Button>
