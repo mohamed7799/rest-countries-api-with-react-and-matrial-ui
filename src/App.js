@@ -82,10 +82,7 @@ function App() {
 
             {countries && filterdCountries && (
               <Switch>
-                <Route
-                  exact
-                  path="/rest-countries-api-with-react-and-matrial-ui"
-                >
+                <Route exact path="/">
                   <MainData.Provider
                     value={{
                       searchedCountries: searchedCountries,
