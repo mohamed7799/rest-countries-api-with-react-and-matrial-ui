@@ -28,7 +28,10 @@ const Country = ({ country }) => {
   return (
     <Link className={classes.a} to={`/detailes/${country.name}`}>
       <Card>
-        <CardMedia className={classes.media} image={country.flag}></CardMedia>
+        <CardMedia
+          className={classes.media}
+          image={country.flags[1]}
+        ></CardMedia>
         <CardHeader title={country.name}></CardHeader>
 
         <List component="nav" aria-label="secondary mailbox folders">

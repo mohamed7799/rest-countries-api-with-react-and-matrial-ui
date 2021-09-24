@@ -27,7 +27,7 @@ function App() {
     setcurrentRegion(e.target.value);
     setSearchedCountries("");
     let arrTemp = countries.filter((item) => {
-      return item.region === e.target.value;
+      return item.continent === e.target.value;
     });
 
     if (e.target.value === "All") {
@@ -56,7 +56,7 @@ function App() {
   });
 
   useEffect(() => {
-    fetch("https://restcountries.eu/rest/v2/all")
+    fetch("https://restcountries.com/v2/all")
       .then((res) => {
         if (!res.ok) {
           throw Error("there was an error");

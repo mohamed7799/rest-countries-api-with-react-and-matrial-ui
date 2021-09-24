@@ -11,7 +11,7 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import { useEffect, useState } from "react";
-const useStyle = makeStyles((theme) => ({
+const useStyle = makeStyles({
   container: {
     marginTop: "3rem",
   },
@@ -36,14 +36,14 @@ const useStyle = makeStyles((theme) => ({
   inline: {
     display: "inline",
   },
-}));
+});
 
 const CountryDetailes = () => {
   const { name } = useParams();
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch(`https://restcountries.eu/rest/v2/name/${name}`)
+    fetch(`https://restcountries.com/v2/name/${name}`)
       .then((res) => {
         if (!res.ok) {
           throw Error("there was an error");
@@ -70,7 +70,7 @@ const CountryDetailes = () => {
       {data && (
         <Grid className={classes.root} container alignItems="center">
           <Grid item sm={5}>
-            <img className={classes.img} srcSet={data[0].flag} alt="" />
+            <img className={classes.img} srcSet={data[0].flags[1]} alt="" />
           </Grid>
           <Grid item sm={5}>
             <div>
@@ -176,7 +176,7 @@ const CountryDetailes = () => {
                             className={classes.inline}
                             color="textPrimary"
                           >
-                            subregion:
+                            continent:
                           </Typography>
                         }
                         secondary={
@@ -185,7 +185,7 @@ const CountryDetailes = () => {
                             className={classes.inline}
                             color="textSecondary"
                           >
-                            {` ${data[0].subregion}`}
+                            {` ${data[0].continent}`}
                           </Typography>
                         }
                       />
